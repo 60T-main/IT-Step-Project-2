@@ -1,0 +1,334 @@
+/* #region BASE STYLES - START */
+:root {
+    --body: #ffffff;
+    --base: #2840BF;
+    --darkbase: #1E0702;
+    --text: #3F3F3F;
+    --darkextra: #5A5A5A;
+    --placeholder: #929292;
+    --border: #CECECE;
+    --bordertwo: #EBEBEB;
+    --textwhite: #FFFFFF;
+    --white: #FFFFFF;
+    --bgsection: #F4F5FC;
+    --pragraph-larg: #352C00;
+    --socialbg: #EAEDF8;
+    --buttoncolor: #4154B9;
+    --pagination: #DFDFDF;
+    --success: #008F20;
+    --green: #087982;
+    --meron: #862014;
+    --borderthree: #DFE2F3;
+    --checkborder: #D5DAF1;
+    --cmnborder: #DFE3F7;
+    --input: #D5DAF0;
+    --inputtwo: #E0E4F8;
+    --inputthree: #E9ECF9;
+    --dadhes: #CBD1F0;
+    --idborder: #EBEBEB;
+    --font-family-sans: 'Arial', sans-serif;
+    --font-family-serif: 'Georgia', serif;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.75rem;
+    --h4-font-size: 1.2rem;
+    --heading-font-weight: 700;
+    --heading-line-height: 1.2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-sans);
+    font-weight: var(--heading-font-weight);
+    line-height: var(--heading-line-height);
+    color: var(--darkbase);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+}
+
+h4 {
+    font-size: var(--h4-font-size);
+    font-weight: 100;
+}
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-family: "Lato", sans-serif;
+}
+
+
+
+.default-btn {
+    border-radius: 5px;
+    color: var(--textwhite);
+    background: var(--base);
+    transition: all 0.5s;
+    padding: 14px 30px 14px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    border: none;
+    cursor: pointer;
+}
+
+body,
+html {
+    color: #666;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6em;
+    overflow-x: hidden;
+    background-color: #f5f6fa;
+}
+
+.dropdown{
+    display: flex;
+    width: 20rem; 
+    height: 3rem;
+    border: none;
+    border-radius: 0.3rem;
+    transition: 0.2s; 
+    color: var(--darkbase);
+    margin-right: 1rem;
+}
+.dropdown:hover{
+    border: 1px solid var(--placeholder);
+}
+
+
+
+/* #endregion BASE STYLES - END */
+
+/* #region HOMEPAGE HEADER - START */
+.header-section {
+    padding: 2rem 6rem;
+    background-blend-mode: overlay;
+    background: 
+        linear-gradient(89.58deg, rgba(117, 168, 226, 0.3) 0.34%, rgba(255, 255, 255, 0) 99.64%),
+        url(https://railway.stepprojects.ge/assets/img/train/trainthumb.png);
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.search-section{
+    padding: 2rem 6rem;
+}
+
+.banner-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    height: 23rem;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.p-div p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-top: 1rem;
+}
+
+
+/* #endregion HOMEPAGE HEADER - END */
+
+/* #region TICKET SECTION - START */
+
+.ticket-section{
+    padding: 2rem 6rem;
+}
+
+.ticket-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    background: var(--white);
+    padding: 30px 30px;
+    transform: translateY(-110px);
+    margin-bottom: -100px;
+    width: 100%;
+}
+.form-div{
+    width: 100%;
+}
+
+.ticket-form{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.ticket-div h5{
+    font-size: 1.5rem;
+    color: var(--text);
+    font-family: "Lato", sans-serif;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.dropdown2{
+    width: 18rem;
+}
+
+/* #endregion TICKET SECTION - END */
+
+/* #region INFO SECTION - START  */
+
+.info-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.info-text-div{
+    padding:120px 0 120px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.info-list .info-list-inner{
+    display: flex;
+    align-items: center; 
+    flex: 1 1 calc(50% - 20px); 
+    gap: 10px; 
+}
+
+
+/* #endregion INFO SECTION - END  */
+
+
+
+
+
+
+/* search page */
+
+.search-section-2{
+    display: flex;
+    flex-direction: row;
+}
+
+.input-div{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 6rem;
+}
+.btn-div{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    header .header-btn-div .default-btn {
+        padding: 5px 15px 6px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1500px) {
+    .container{
+        max-width: 1320px;
+    }
+    .ticket-form{
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+    .ticket-form .dropdown{
+      width: 100%;
+    }
+    .ticket-form button{
+        grid-column: 1 /span 2;
+        margin: 0.5rem 12rem;
+    }
+}
+@media (max-width: 1200px) {
+    .container{
+        max-width: 1140px;;
+    }
+    .travel-img-div{
+        display: none;
+    }
+
+    .info-text-div{
+        margin: 0 auto;
+        width: 80%;
+    }
+
+}
+@media (max-width: 768px) {
+    .container{
+        max-width: 540px;
+    }
+
+
+}
+
