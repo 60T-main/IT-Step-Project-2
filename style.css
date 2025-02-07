@@ -97,6 +97,12 @@ p {
     cursor: pointer;
 }
 
+.default-search{
+    height:3rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
 body,
 html {
     color: #666;
@@ -117,11 +123,16 @@ html {
     transition: 0.2s; 
     color: var(--darkbase);
     margin-right: 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    padding: 0px 5px;
 }
 .dropdown:hover{
     border: 1px solid var(--placeholder);
 }
 
+.logo-div-mobile{
+    display: none;
+}
 
 
 /* #endregion BASE STYLES - END */
@@ -137,7 +148,9 @@ html {
     background-size: contain;
     background-repeat: no-repeat;
 }
-
+.logo-div{
+    cursor: pointer;
+}
 .search-section{
     padding: 2rem 6rem;
 }
@@ -260,17 +273,24 @@ header {
 }
 
 .input-div{
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     padding: 2rem 6rem;
 }
+
 .btn-div{
     justify-content: center;
     display: flex;
     align-items: center;
 }
+.btn-div button{
+    margin-top: 18px;
+}
 
+
+
+/* MEDIA QUERIES */
 
 @media (max-width: 768px) {
     header .header-btn-div .default-btn {
@@ -311,6 +331,16 @@ header {
     }
 }
 @media (max-width: 1200px) {
+    .logo-div{
+        display: none;
+    }
+    .logo-div-mobile{
+        display: flex;
+    }
+
+    .logo-img-mobile{
+        width: 5rem;
+    }
     .container{
         max-width: 1140px;;
     }
@@ -323,12 +353,52 @@ header {
         width: 80%;
     }
 
+    .ticket-form{
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    .ticket-form button{
+        grid-column: 1 /span 4;
+        margin: 0.5rem 12rem;
+    }
+
 }
+
+@media (max-width: 1000px){
+    .ticket-form{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .ticket-form button{
+        grid-column: 1 /span 2;
+        margin: 0.5rem 12rem;
+    }
+
+    .info-text-div{
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    .ticket-form .dropdown{
+        width: 100%;
+      }
+}
+
 @media (max-width: 768px) {
     .container{
         max-width: 540px;
     }
 
+    .ticket-form{
+        grid-template-columns: 1fr;
+        gap:10px;
+    }
+
+    .ticket-form button{
+        grid-column: 1;
+        grid-row: 5;
+        margin: 0;
+    }
 
 }
 
