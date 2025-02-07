@@ -19,7 +19,7 @@
             </div>
             <div class="logo-div-mobile">
                 <a href="./index.html">
-                    <img href="./index.html" class="logo-img" src="https://railway.stepprojects.ge/assets/img/logo/favicon.png" alt="logo">
+                    <img href="./index.html" class="logo-img-mobile" src="https://railway.stepprojects.ge/assets/img/logo/favicon.png" alt="logo">
                 </a>
             </div>
             <div class="header-btn-div">
@@ -46,21 +46,15 @@
                 <h5>დაჯავშნეთ მატარებლის ბილეთი</h5>
             </div>
             <div class="form-div container">
-                <form action="" class="ticket-form">
-                    <select class ="dropdown" name="" id="">
-                        <option value="" disabled selected>საიდან</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                <form id="ticket-form" class="ticket-form">
+                    <select class="dropdown" name="fromStation" id="fromStation">
+                        <option disabled selected>საიდან</option>
                     </select>
-                    <select class ="dropdown" name="" id="">
-                        <option value="" disabled selected>სად</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                    <select class="dropdown" name="toStation" id="toStation">
+                        <option disabled selected>სად</option>
                     </select>
-                    <input class ="dropdown dropdown2" type="date" name="" id="">
-                    <input class ="dropdown dropdown2" placeholder="მგზავრების რაოდენობა" type="text" name="" id="">
+                    <input class="dropdown dropdown2" type="date" name="travelDate" id="travelDate">
+                    <input class="dropdown dropdown2" placeholder="მგზავრების რაოდენობა" type="number" name="passengers" id="passengers">
                     <button class="default-btn" type="submit">
                         მატარებლის მოძიება
                     </button>
@@ -97,7 +91,6 @@
             </div>
         </section>
         <!-- #endregion INFO SECTION - END -->
+        <script src="./script.js"></script>
 </body>
-
-<script src="./script.js"></script>
 </html>
