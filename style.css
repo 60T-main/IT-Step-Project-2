@@ -114,7 +114,7 @@ html {
     background-color: #f5f6fa;
 }
 
-.dropdown{
+.dropdown, .dropdown1{
     display: flex;
     width: 20rem; 
     height: 3rem;
@@ -126,7 +126,7 @@ html {
     border: 1px solid rgba(128, 128, 128, 0.2);
     padding: 0px 5px;
 }
-.dropdown:hover{
+.dropdown:hover, .dropdown1:hover{
     border: 1px solid var(--placeholder);
 }
 
