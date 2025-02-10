@@ -134,6 +134,25 @@ html {
     display: none;
 }
 
+.test{
+    width: 100%;
+}
+
+
+.departures-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: auto;
+}
+
+.departures-cards li {
+    margin-bottom: 4rem;
+}
+.departures-cards button {
+    height: 4rem;
+}
+
 
 /* #endregion BASE STYLES - END */
 

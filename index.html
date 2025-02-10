@@ -48,17 +48,20 @@
             <div class="form-div container">
                 <form id="ticket-form" class="ticket-form">
                     <select class="dropdown" name="fromStation" id="fromStation">
-                        <option disabled selected>საიდან</option>
+                        <option value="საიდან" disabled selected>საიდან</option>
                     </select>
                     <select class="dropdown" name="toStation" id="toStation">
-                        <option disabled selected>სად</option>
+                        <option value="სად" disabled selected>სად</option>
                     </select>
                     <input class="dropdown1" type="date" name="travelDate" id="travelDate">
                     <input class="dropdown1" placeholder="მგზავრების რაოდენობა" type="number" name="passengers" id="passengers">
-                    <button class="default-btn" type="submit" onclick="onFilterBtnClick()">
+                    <button class="default-btn" type="submit">
                         მატარებლის მოძიება
                     </button>
                 </form>
+            </div>
+            <div class="test" id="test">
+                
             </div>
         </div>
     </section>
