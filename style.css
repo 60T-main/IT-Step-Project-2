@@ -30,7 +30,7 @@
     --font-family-serif: 'Georgia', serif;
     --h1-font-size: 2.5rem;
     --h2-font-size: 2rem;
-    --h3-font-size: 1.75rem;
+    --h3-font-size: 1.5rem;
     --h4-font-size: 1.2rem;
     --heading-font-weight: 700;
     --heading-line-height: 1.2;
@@ -69,6 +69,7 @@ h2 {
 
 h3 {
     font-size: var(--h3-font-size);
+    font-weight: bold;
 }
 
 h4 {
@@ -146,6 +147,7 @@ html {
     width: auto;
 }
 
+
 .departures-cards li {
     margin-bottom: 4rem;
 }
@@ -153,12 +155,18 @@ html {
     height: 4rem;
 }
 
+.container-padding{
+    padding: 2rem 6rem;
+}
+
+.header-section.no-background{
+    background: none;
+}
 
 /* #endregion BASE STYLES - END */
 
 /* #region HOMEPAGE HEADER - START */
 .header-section {
-    padding: 2rem 6rem;
     background-blend-mode: overlay;
     background: 
         linear-gradient(89.58deg, rgba(117, 168, 226, 0.3) 0.34%, rgba(255, 255, 255, 0) 99.64%),
@@ -167,6 +175,7 @@ html {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
 .logo-div{
     cursor: pointer;
 }
@@ -187,6 +196,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem 6rem;
 
 }
 
@@ -196,6 +206,7 @@ header {
     color: var(--text);
     margin-top: 1rem;
 }
+
 
 
 /* #endregion HOMEPAGE HEADER - END */
@@ -219,6 +230,11 @@ header {
     margin-bottom: -100px;
     width: 100%;
 }
+
+.ticket-div.version2{
+    transform: translate(10px, 10px);
+}
+
 .form-div{
     width: 100%;
 }
@@ -280,9 +296,52 @@ header {
 /* #endregion INFO SECTION - END  */
 
 
+/* reserve seat page (HTML in script.js) */
+
+.departures-cards-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+}
+
+.departures-li{
+    margin-right: 15rem;
+}
 
 
+.invoice-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 25rem;
 
+}
+
+.invoice-div h3{
+    margin-bottom: 1rem;
+}
+
+.title-div{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.377);
+}
+
+.content-div{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    min-height: 5rem;
+}
+
+.sum-div{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
 
 /* search page */
 
