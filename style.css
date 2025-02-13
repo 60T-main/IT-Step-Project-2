@@ -85,6 +85,19 @@ p {
     font-family: "Lato", sans-serif;
 }
 
+.visible{
+    visibility: visible !important;
+    
+}
+
+
+.hidden{
+    visibility: hidden;
+}
+
+.blurred{
+    filter: opacity(0.5);
+}
 
 
 .default-btn {
@@ -360,8 +373,22 @@ header {
 
 .pass-info-div-inner{
     display: flex;
-    gap: 20rem;
+    flex-direction: column;
     padding: 3rem 0;
+}
+
+.modal-content{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: end;
+    margin-right: 1rem;
 }
 
 .popup-div{
@@ -370,17 +397,6 @@ header {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    width: 35rem;
-    height: 16rem;
-    border-radius: 5px;
-    border: 1px solid rgba(128, 128, 128, 0.5);
-
-    visibility: hidden;
 }
 
 .popup-div .wagons{
@@ -418,7 +434,94 @@ header {
     color: white;
 }
 
-.wagons-texts
+.pass-info-div-parent h3{
+    margin-bottom:1rem ;
+}
+
+.input-form{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.input-form button{
+    max-height: 3rem;
+    font-size: 18;
+    padding: 0 2rem;
+}
+
+/* train */
+
+.train {
+    display: flex;
+    width: 300px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin:0 auto;
+}
+.column2 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 0 5px;
+}
+.toilet {
+    background-color: #d3d3d3;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    min-height: 3.2rem;
+}
+.seats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.seat {
+    background-color: #b6e07f;
+    border: 1px solid #a0d468;
+    border-radius: 5px;
+    margin: 2px 0;
+    padding: 5px;
+    text-align: center;
+    width: 45%;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.train-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.seat-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.aisle {
+    width: 30px; /* Space between left and right seat groups */
+}
+
+.seat-btn {
+    background-color: lightgreen;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+}
+
+.seat-btn:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+
 
 /* search page */
 
@@ -432,6 +535,7 @@ header {
     display: flex;
     flex-direction: column;
     padding: 2rem 6rem;
+    gap: 2rem;
 }
 
 .btn-div{
@@ -470,7 +574,7 @@ header {
 }
 
 @media (max-width: 1500px) {
-    .container{
+    .container1{
         max-width: 1320px;
     }
     .ticket-form{
@@ -496,8 +600,8 @@ header {
     .logo-img-mobile{
         width: 4rem;
     }
-    .container{
-        max-width: 1140px;;
+    .container1{
+        max-width: 1140px;
     }
     .travel-img-div{
         display: none;
@@ -540,7 +644,7 @@ header {
 }
 
 @media (max-width: 768px) {
-    .container{
+    .container1{
         max-width: 540px;
     }
 
