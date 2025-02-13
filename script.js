@@ -75,7 +75,6 @@ function generateVisual() {
     banner_div.innerHTML = `<span>აირჩიეთ თქვენთვის სასურველი მატარებელი</span>`;
     header_section.classList.toggle('no-background');
     ticket_div.classList.toggle(`version2`);
-    ticket_section.style.height = "75rem";
  
 
     let empty = `<ul class="departures-cards">
@@ -235,7 +234,6 @@ function generateReserveVisual(train){
 
 }
 
-// Initial fetch calls
 getStations();
 getDepartures();
 getTrains();

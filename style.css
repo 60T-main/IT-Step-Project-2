@@ -46,6 +46,7 @@
 }
 
 
+
 h1,
 h2,
 h3,
@@ -111,9 +112,9 @@ html {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.6em;
-    overflow-x: hidden;
     background-color: #f5f6fa;
 }
+
 
 .dropdown, .dropdown1{
     display: flex;
@@ -342,6 +343,82 @@ header {
     width: 100%;
     justify-content: space-around;
 }
+
+.pass-info-div-parent{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 6rem;
+    margin-top: 10rem;
+    position: relative;
+}
+
+.contact-form{
+    display: flex;
+    gap: 20rem;
+    padding: 3rem 0;
+}
+
+.pass-info-div-inner{
+    display: flex;
+    gap: 20rem;
+    padding: 3rem 0;
+}
+
+.popup-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 35rem;
+    height: 16rem;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+
+    visibility: hidden;
+}
+
+.popup-div .wagons{
+    display: flex;
+}
+.popup-div .wagons li{
+    cursor: pointer;
+    filter:opacity(0.5)
+}
+.popup-div .wagons li:hover{
+    filter:opacity(1)
+}
+
+.popup-div h3{
+    margin-top: -3rem;
+}
+
+.wagons-texts{
+    display: flex;
+    gap:1rem;
+}
+
+.wagons-texts li{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 8rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    visibility: hidden;
+}
+.wagons-texts li h2{
+    font-size: 20px;
+    color: white;
+}
+
+.wagons-texts
 
 /* search page */
 
