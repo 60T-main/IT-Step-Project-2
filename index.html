@@ -4,175 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
-
-
 </head>
 
 <body>
-
-    <section class="header-section">
-        <header href="./index.html" class="container1">
-            <div class="logo-div">
-                <a href="./index.html">
-                    <img href="./index.html" class="logo-img"
-                        src="https://railway.stepprojects.ge/assets/img/logo/logo.png" alt="logo">
-                </a>
-            </div>
-            <div class="logo-div-mobile">
-                <a href="./index.html">
-                    <img href="./index.html" class="logo-img-mobile"
-                        src="https://railway.stepprojects.ge/assets/img/logo/favicon.png" alt="logo">
-                </a>
-            </div>
-            <div class="header-btn-div">
-                <a href="./search_page.html" class="default-btn">
-                    ბილეთის შემოწმება/დაბრუნება
-                </a>
-            </div>
-        </header>
-        <div class="banner-div container1 container-padding">
-            <div class="h1-div">
-                <h1 class="h1-txt">შეიძინეთ მატარებლის ბილეთები ონლაინ</h1>
-            </div>
-            <div class="p-div">
-                <p class="p-txt">გისურვებთ ბედნიერ მგზავრობას</p>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="ticket-section">
-        <div class="ticket-div container1">
-            <div class="ticket-text-div">
-                <h5>დაჯავშნეთ მატარებლის ბილეთი</h5>
-            </div>
-            <div class="form-div container1">
-                <form id="ticket-form" class="ticket-form">
-                    <select class="dropdown" name="fromStation" id="fromStation">
-                        <option value="საიდან" disabled selected>საიდან</option>
-                    </select>
-                    <select class="dropdown" name="toStation" id="toStation">
-                        <option value="სად" disabled selected>სად</option>
-                    </select>
-                    <input class="dropdown1" type="date" name="travelDate" id="travelDate">
-                    <input class="dropdown1" id="pass-num" placeholder="მგზავრების რაოდენობა" type="number"
-                        name="passengers" id="passengers">
-                    <button class="default-btn" type="submit">
-                        მატარებლის მოძიება
-                    </button>
-                </form>
-            </div>
-            <div class="test" id="test">
-
-            </div>
-
-
-        </div>
-    </section>
-
-
-    <section class="info-section container1">
-        <div class="travel-img-div"><img src="https://railway.stepprojects.ge/assets/img/train/trainticket.png"
-                alt="travel"></div>
-        <div class="info-text-div">
-            <h1>მატარებლის ბილეთები</h1>
-            <p>რკინიგზის ბილეთების შესაძენად თქვენ დაგჭირდებათ თითოეული მგზავრის პირადი ნომერი. გთხოვთ მოამზადოთ ეს
-                ინფორმაცია წინასწარ.</p>
-            <ul class="info-list">
-                <li class="info-list-inner">
-                    <img src="https://railway.stepprojects.ge/assets/img/train/unoffer.png" alt="">
-                    <h4>შეუზღუდავი შეთავაზებები</h4>
-                </li>
-                <li class="info-list-inner">
-                    <img src="https://railway.stepprojects.ge/assets/img/train/suppor24.png" alt="">
-                    <h4>24X7 მხარდაჭერა</h4>
-                </li>
-                <li class="info-list-inner">
-                    <img src="https://railway.stepprojects.ge/assets/img/train/secure100.png" alt="">
-                    <h4>100% უსაფრთხო</h4>
-                </li>
-                <li class="info-list-inner">
-                    <img src="https://railway.stepprojects.ge/assets/img/train/truspay.png" alt="">
-                    <h4>100% უსაფრთხო გადახდა</h4>
-                </li>
-            </ul>
-        </div>
-
-
-    </section>
-
-    <div class="pass-info-div-parent">
-        <div class="contact-info-div">
-            <h2>საკონტაქტო ინფორმაცია</h2>
-            <form action="" class="contact-form"><input type="email" class="dropdown1" placeholder="იმეილი"
-                    name="email"><input type="number" class="dropdown1" placeholder="ტელეფონის ნომერი" name="phonenNum">
-            </form>
-        </div>
-        <div class="pass-info-div">
-            <h2>მგზავრების ინფორმაცია</h2>
-            <div class="pass-info-div-inner">
-
-            </div>
-        </div>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="popup-div">
-                            <ul class="wagons">
-                                <li class="wagon-li wagon1"><img
-                                        data-name="I კლასი"
-                                        src="https://railway.stepprojects.ge/images/firstWagon.png " width="140px"
-                                        alt="wagon1"></li>
-                                <li class="wagon-li wagon2"><img
-                                        data-name="II კლასი"
-                                        src="https://railway.stepprojects.ge/images/midWagon.png" width="140px"
-                                        alt="wagon2"></li>
-                                <li class="wagon-li wagon3"><img
-                                        data-name="ბიზნესი"
-                                        src="https://railway.stepprojects.ge/images/lastWagon.png" width="140px"
-                                        alt="wagon3"></li>
-                            </ul>
-                            <ul class="wagons-texts">
-                                <li class="wagon-li-txt1">
-                                    <h2>I კლასი</h2>
-                                </li>
-                                <li class="wagon-li-txt1">
-                                    <h2>II კლასი</h2>
-                                </li>
-                                <li class="wagon-li-txt1">
-                                    <h2>ბიზნესი</h2>
-                                </li>
-                            </ul>
-                            <h3 class="wagon_h3">გთხოვთ აირჩიოთ ვაგონი</h3>
-                        </div>
-
-                        <div class="train">
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <header>
+        <img src="https://restaurant.stepprojects.ge/images/logo.png" alt="logo">
+        <nav>
+            <a href="./index.html">
+                <h3>Home</h3>
+            </a>
+            <a href="">
+                <h3>Cart</h3>
+            </a>
+        </nav>
+    </header>
+    <div class="bannerDiv">
+        <div class="mainPitch">
+            <h1>Fast and efficient, online ordering you must try.</h1>
         </div>
     </div>
 
+    <section class="menuSection padding">
+        <div class="categoriesTxt">
+            <h1>Categories</h1>
+            </h1>
+            <div class="categoriesDiv"></div>
+            <div class="cardsParent">
+                <div class="filterDiv border">
+                    <div class="filterTxt">
+                        <p>Filter</p>
+                        <i class="fa-solid fa-filter"></i>
+                    </div>
+                    <div class="filterContent padding2">
 
+                        <div class="spiceDiv">
+                            <div class="spiceTxt"></div>
+                            <div class="slidecontainer">
+                                <input type="range" min="0" max="4" value="0" class="slider" id="myRange">
+                              </div>
+                        </div>
 
+                        <div class="nutsDiv"> 
+                            <input type="checkbox" name="nuts" id="nuts"
+                                class="filterNuts defaultCheck" value="true"></input>
+                                <label for="nuts">No Nuts</label>
+                        </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+                        <div class="vegDiv">
+                            <input type="checkbox" name="veg" id="vegs" class="filterVeg defaultCheck"
+                                value="true"></input>
+                                <label for="vegs">Vegetarian Only</label>
+                        </div>
+
+                        <button class="defaultBtn reset">RESET</button>
+                        <button class="defaultBtn applyFilter">APPLY FILTER</button>
+                    </div>
+                </div>
+                <div class="cardsDiv"></div>
+            </div>
+
+    </section>
+
     <script src="./script.js"></script>
 </body>
 
