@@ -52,6 +52,7 @@ h3{
     border-radius: 5px;
     border: none;
     width: 100%;
+    cursor: pointer;
 }
 
 .reset{
@@ -174,6 +175,10 @@ header nav a{
     justify-content: center;
     gap: 1rem;
     margin: 1rem 0; 
+}
+
+.spiceDiv{
+    flex-direction: column;
 }
 
 .cardsDiv .card img{

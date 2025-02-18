@@ -1,0 +1,47 @@
+    // fetch
+    
+    function getProductsAll() {
+        fetch(`${baseUrl}/api/products/GetAll`)
+        .then(res => res.json())
+        .then(data => {
+            productsArr = data;
+            generateCardsVisual();
+        })
+        .catch(error => console.error("Error fetching Products:", error));
+    }
+    
+    // Add event listeners
+    document.querySelectorAll('.category').forEach(category => {
+        category.addEventListener('click', () => {
+            filterByCategory(category.getAttribute('data-id'));
+        });
+    });
+
+
+    // ADD TO ASKET 
+
+    function addToBasket() {
+
+        let data = {
+            quantity: 0,
+            price: 0,
+            productId: 0,
+        }
+    
+        fetch(`${baseUrl}/api/Baskets/AddToBasket`,{
+            method:`POST`,
+            headers: {'Content-Type': 'application/json'},
+            body:JSON.stringify(data)
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data);
+            console.log(`add in basket`);
+        })
+        .catch((err) =>{
+            console.error(err);
+            console.error(`error add to basket`);
+        })
+    }

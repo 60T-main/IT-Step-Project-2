@@ -18,7 +18,7 @@
             <a href="./index.html">
                 <h3>Home</h3>
             </a>
-            <a href="">
+            <a href="./basket.html">
                 <h3>Cart</h3>
             </a>
         </nav>
@@ -51,18 +51,17 @@
 
                         <div class="nutsDiv"> 
                             <input type="checkbox" name="nuts" id="nuts"
-                                class="filterNuts defaultCheck" value="true"></input>
+                                class="filterNuts defaultCheck" ></input>
                                 <label for="nuts">No Nuts</label>
                         </div>
 
                         <div class="vegDiv">
-                            <input type="checkbox" name="veg" id="vegs" class="filterVeg defaultCheck"
-                                value="true"></input>
+                            <input type="checkbox" name="veg" id="vegs" class="filterVeg defaultCheck"></input>
                                 <label for="vegs">Vegetarian Only</label>
                         </div>
 
-                        <button class="defaultBtn reset">RESET</button>
-                        <button class="defaultBtn applyFilter">APPLY FILTER</button>
+                        <button onclick="resetBtnClick()" class="defaultBtn reset">RESET</button>
+                        <button onclick="onFilterBtnClick()" class="defaultBtn applyFilter">APPLY FILTER</button>
                     </div>
                 </div>
                 <div class="cardsDiv"></div>
