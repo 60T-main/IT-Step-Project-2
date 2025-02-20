@@ -18,30 +18,160 @@
     });
 
 
+    // Generate product cards
+function generateCardsVisual() {
+    cardsDiv.innerHTML = productsArr.map(product => `
+        <div class="card border">
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <div class="spiceDiv"><p>Spiciness: ${product.spiciness}</p></div>
+            <div class="nutsVegDiv">
+                <p>${product.nuts ? '✔️ Nuts' : '❌ Nuts'}</p>
+                <p>${product.vegeterian ? '✔️ Vegetarian' : '❌ Vegetarian'}</p>
+            </div>
+            <div class="priceCartDiv">
+                <h3>${product.price} GEL</h3>
+                <a class="addToBasketBtn" onclick="onAddToBasketBtnClick(${product.id})">Add to Cart</a>
+            </div>
+        </div>
+    `).join('');
+}
+
+
     // ADD TO ASKET 
 
-    function addToBasket() {
-
-        let data = {
-            quantity: 0,
-            price: 0,
-            productId: 0,
-        }
+    function onAddToBasketBtnClick(id) {
+        console.log(id);
     
-        fetch(`${baseUrl}/api/Baskets/AddToBasket`,{
-            method:`POST`,
-            headers: {'Content-Type': 'application/json'},
-            body:JSON.stringify(data)
+        let findElementInArray = productsArr.find((element)=>{
+            return element.id == id
         })
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-            console.log(`add in basket`);
-        })
-        .catch((err) =>{
-            console.error(err);
-            console.error(`error add to basket`);
-        })
+    
+        if(findElementInArray){
+    
+            let data = {
+                quantity: 0,
+                price: findElementInArray.price,
+                productId: findElementInArray.id,
+            }
+        
+            fetch(`${baseUrl}/api/Baskets/AddToBasket`,{
+                method:`POST`,
+                headers: {'Content-Type': 'application/json'},
+                body:JSON.stringify(data)
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                console.log(data);
+                console.log(`add in basket`);
+            })
+            .catch((err) =>{
+                console.error(err);
+                console.error(`error add to basket`);
+            })
+        } else {
+            console.error(`element not found`); 
+        }
     }
+
+
+
+    // ADD TO CART FUNCTIONAL
+
+    let baseUrl = `https://restaurant.stepprojects.ge`;
+let productsArr = [];
+let cardsDiv = document.querySelector(`.cardsDiv`);
+
+
+getProductsAll();
+
+// Fetch products for basket
+function getProductsAll() {
+    fetch(`${baseUrl}/api/Baskets/GetAll`)
+        .then(res => res.json())
+        .then(data => {
+            productsArr = data;
+            generateCardsVisual();
+        })
+        .catch(error => console.error("Error fetching Products:", error));
+}
+
+
+// Generate product cards
+function generateCardsVisual() {
+    cardsDiv.innerHTML = productsArr.map(product => `
+        <div class="card border">
+            <img src="${product.product.image}" alt="${product.product.name}">
+            <h3>${product.product.name}</h3>
+            <div class="spiceDiv"><p>Spiciness: ${product.product.spiciness}</p></div>
+            <div class="nutsVegDiv">
+                <p>${product.product.nuts ? '✔️ Nuts' : '❌ Nuts'}</p>
+                <p>${product.product.vegeterian ? '✔️ Vegetarian' : '❌ Vegetarian'}</p>
+            </div>
+            <div class="priceCartDiv">
+            <h3>${product.price} GEL</h3>
+            </div> 
+            <div class="priceCartDiv">
+            <button onclick="onPlusOrMinusBtnClick(${product.product.id},1)" style="width: 2rem">-</button>
+            <h3>Qty: ${product.quantity}</h3>
+            <button onclick="onPlusOrMinusBtnClick(${product.product.id},0)" style="width: 2rem">+</button>
+            </div> 
+        <a onclick="onDeleteProductBtnClick(${product.product.id})" class="deleteBtn">Delete</a>
+    `).join('');
+}
+
+
+function onDeleteProductBtnClick(id){
+    fetch(`${baseUrl}/api/Baskets/DeleteProduct/${id}`,{
+        method:`DELETE`,
+        headers: {'Content-Type': 'application/json'},
+    }).then((data) => {
+        getProductsAll();
+    })
+    .catch(error => console.error("Error fetching Products:", error));
+}
+
+// plus and minus button function
+function onPlusOrMinusBtnClick(id, isPlusOrMinus){
+let findElement = productsArr.find((element)=>{
+    return element.product.id == id
+})
+
+if(findElement){
+
+    if (isPlusOrMinus == 0) {
+        
+        findElement.quantity = findElement.quantity + 1
+    } else if(isPlusOrMinus == 1){
+        if (findElement.quantity > 1) {
+            findElement.quantity = findElement.quantity - 1
+        }else{
+            console.error(`isPlusMinus mist be 0 or 1`);
+            return
+        }
+    }
+    findElement.price = findElement.quantity * findElement.product.price
+    console.log(findElement.quantity, findElement.price);
+    
+    let data = {
+            quantity: findElement.quantity,
+            price: findElement.price,
+            productId: findElement.product.id
+         }
+
+         fetch(`${baseUrl}/api/Baskets/UpdateBasket`,{
+            method:`PUT`,
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        }).then((data) => {
+            getProductsAll();
+        })
+        .catch(error => console.error("Error fetching Products:", error));
+    
+}else{
+    console.error(`product not found`);
+    
+}
+}

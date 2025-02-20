@@ -3,29 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Basket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
+    <div class="offScreenMenu">
+        <a style="font-size:2rem; cursor: pointer;" onclick="onHamCloseBtnClick()" class="hamburgerClose">
+            ❌
+        </a>
+        
+        <ul>
+            <a style="cursor: pointer;" href="./index.html"><img src="https://restaurant.stepprojects.ge/images/logoBlack.png" alt=""></a>
+            <li><a style="cursor: pointer;"href="./index.html"><h2>Home</h2></a></li>
+        </ul>
+    </div>
+
+
     <header>
-        <img src="https://restaurant.stepprojects.ge/images/logo.png" alt="logo">
+        <a href="/index.html"><img src="https://restaurant.stepprojects.ge/images/logo.png" alt="logo"></a>
+        
         <nav>
-            <a href="./index.html">
+            <div class="desktopHeadDiv">
+                <a href="./index.html">
                 <h3>Home</h3>
             </a>
             <a href="./basket.html">
                 <h3>Cart</h3>
             </a>
+        </div>
+            
+
+        <div class="respHeadDiv">
+            <a href="./basket.html">
+                <img style="width: 3.2rem; cursor: pointer" src="https://restaurant.stepprojects.ge/images/cart_1.png" alt="cart">
+            </a>
+            <a onclick="onHamBtnClick()" class="hamburger">
+                <i style="font-size: 2.5rem; cursor: pointer;"class="fa-solid fa-bars-staggered"></i>
+            </a>
+        </div>
         </nav>
     </header>
     <div class="bannerDiv">
         <div class="mainPitch">
-            <h1>Fast and efficient, online ordering you must try.</h1>
+            <h1>My Cart</h1>
+        </div>
+    </div>
+    <div class="breadcrumDiv">
+                    <div class="main_breadcrum">
+                        <ul>
+                            <li><a class="trans" title="Home" href="/">Home /</a></li>
+                            <li>Cart</li>
+                        </ul>
         </div>
     </div>
 
-    <div class="cardsDiv"></div>
+    <table class="cardsDivBasket"></table>
+    <div class="sumDiv"></div>
+
+
+    
 
     <script src="./basket.js"></script>
 </body>

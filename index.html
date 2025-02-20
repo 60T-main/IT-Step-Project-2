@@ -12,15 +12,41 @@
 </head>
 
 <body>
+
+    <div class="offScreenMenu">
+        <a style="font-size:2rem; cursor: pointer;" onclick="onHamCloseBtnClick()" class="hamburgerClose">
+            ❌
+        </a>
+        
+        <ul>
+            <a style="cursor: pointer;" href="./index.html"><img src="https://restaurant.stepprojects.ge/images/logoBlack.png" alt=""></a>
+            <li><a style="cursor: pointer;"href="./index.html"><h2>Home</h2></a></li>
+        </ul>
+    </div>
+
+
     <header>
-        <img src="https://restaurant.stepprojects.ge/images/logo.png" alt="logo">
+        <a href="/index.html"><img src="https://restaurant.stepprojects.ge/images/logo.png" alt="logo"></a>
+        
         <nav>
-            <a href="./index.html">
+            <div class="desktopHeadDiv">
+                <a href="./index.html">
                 <h3>Home</h3>
             </a>
             <a href="./basket.html">
                 <h3>Cart</h3>
             </a>
+        </div>
+            
+
+            <div class="respHeadDiv">
+                <a href="./basket.html">
+                    <img style="width: 3.2rem; cursor: pointer" src="https://restaurant.stepprojects.ge/images/cart_1.png" alt="cart">
+                </a>
+                <a onclick="onHamBtnClick()" class="hamburger">
+                    <i style="font-size: 2.5rem; cursor: pointer;"class="fa-solid fa-bars-staggered"></i>
+                </a>
+            </div>
         </nav>
     </header>
     <div class="bannerDiv">

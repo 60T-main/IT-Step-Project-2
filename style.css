@@ -60,6 +60,56 @@ h3{
 }
 
 
+
+.offScreenMenu {
+    background: url(https://restaurant.stepprojects.ge/images/2.jpg);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background-position: bottom;
+    background-size: cover;
+    z-index: 100;
+    visibility: hidden;
+}
+.offScreenMenu ul{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 2rem;
+}
+.offScreenMenu ul img{
+    width: 10rem;
+}
+
+.hamburger{
+    z-index: 1000;
+}
+
+.hamburgerClose{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.offScreenMenu:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;  
+    background: rgba(254, 220, 42, 0.8); 
+    z-index: -1; 
+    transform: skew(-14deg) translateX(0);
+    width: 65%;
+}
+
+
+
 header{
     display: flex;
     flex-direction: row;
@@ -75,7 +125,16 @@ header{
 
 header nav{
     display: flex;
+    
+}
+
+.desktopHeadDiv{
+    display: flex;
     gap: 4rem;
+}
+
+.respHeadDiv{
+    display: none;
 }
 
 header nav a{
@@ -131,6 +190,7 @@ header nav a{
     margin-top: 3rem;
     position: relative;
     height: 3.5rem;
+    flex-wrap: wrap;
 }
 .categoriesDiv:after {
     position: absolute;
@@ -146,6 +206,8 @@ header nav a{
 }
 
 
+
+
 .categoriesDiv a{
     font-size: 20px;
 }
@@ -158,8 +220,10 @@ header nav a{
 
 .cardsDiv{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
+    width: 100%;
 }
 
 .cardsDiv .card{
@@ -239,15 +303,15 @@ header nav a{
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
-  }
-  
-  /* Mouse-over effects */
-  .slider:hover {
+}
+
+/* Mouse-over effects */
+.slider:hover {
     opacity: 1; /* Fully shown on mouse-over */
-  }
-  
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-  .slider::-webkit-slider-thumb {
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
     width: 1.5rem; /* Set a specific slider handle width */
@@ -256,7 +320,364 @@ header nav a{
     cursor: pointer; /* Cursor on hover */
     border-radius: 25px;
     border: 1px solid red;
-  }
-  
+}
+
+/* Cart Page */
 
 
+
+.cartTxt{
+    display: flex;
+    align-items: center;
+    height: 10rem;
+}
+.cartTxt h1{
+    font-size: 34px;
+}
+
+
+.breadcrumDiv{
+    background-color: red;
+    height: auto;
+}
+
+.breadcrumDiv .main_breadcrum{
+    display: flex;
+    margin-top: -1px;
+    align-items: center;
+}
+
+
+.breadcrumDiv .main_breadcrum ul{
+    display: flex;
+    height: 3rem;
+    margin-left: 8rem;
+    gap: 1rem;
+    align-items: center;
+    padding-bottom: 5px;
+}
+.trans{
+    color: white;
+    font-weight: 500;
+}
+.breadcrumDiv ul li:last-child{
+    color: #ffcc00;
+    margin-left: -10px;
+    font-weight: 500;
+}
+
+
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+td img {
+    vertical-align: middle;
+    margin-right: 8px;
+    width:150px;
+}
+
+.quantityDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.quantityDiv button{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: 1px solid gray;
+}
+
+td{
+    min-width: 10rem;
+}
+
+.productTd{
+    display: flex;
+    align-items: center;
+}
+.imgP{
+    display: flex;
+    align-items: center;
+}
+
+td a{
+    margin-right: 1rem;
+}
+
+td:first-child{
+    text-align: left;
+}
+
+.sumDiv{
+    display: flex;
+    justify-content: end;
+    padding-right: 15rem;
+}
+
+.sumDiv .sumH1{
+    font-size: 26px;
+    
+}
+.sumDiv .sumH1 span{
+    color: red;
+    
+}
+
+
+/* responsive */
+
+
+@media screen and (max-width: 1313px) {
+    .categoriesDiv:after {
+        bottom: -30px;
+    }
+
+
+    table {
+        width: 80%;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+    
+    th, td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    td img {
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 80px;
+    }
+
+    
+    .quantityDiv{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    table h3{
+        font-size: 1rem;
+    }
+    .quantityDiv button{
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 0.6rem;
+    }
+    
+    td{
+        min-width: 10rem;
+    }
+    
+    td a{
+        margin-right: 1rem;
+    }
+    
+    td:first-child{
+        text-align: left;
+    }
+    
+    .sumDiv{
+        display: flex;
+        justify-content: end;
+        padding-right: 15rem;
+    }
+    
+    .sumDiv .sumH1{
+        font-size: 20px;
+        
+    }
+    .sumDiv .sumH1 span{
+        color: red;
+        
+    }
+
+    .imgP{
+        flex-direction: column;
+    }
+    
+    .sumDiv{
+        padding-right: 5rem;
+    }
+
+}
+@media screen and (max-width: 821px) {
+
+    header{
+        padding: 2rem 3rem;
+    }
+    
+    .categoriesDiv{
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        position: relative;
+        height: 3.5rem;
+        flex-wrap: wrap;
+    }
+    
+    
+    .categoriesDiv:after {
+        bottom: -80px;
+    }
+
+
+    .cardsParent{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filterDiv{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 15rem;
+        width: 35%;
+        max-height: 25rem;
+        margin-top: 2rem;
+        
+    }
+
+    .filterContent{
+        display: flex;
+        padding: 1rem;
+        width: 80%;
+    }
+
+
+
+}
+@media screen and (max-width: 659px) {
+
+    .desktopHeadDiv{
+        display: none;
+    }
+
+    .respHeadDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .menuSection{
+        padding: 1rem 5rem;
+    }
+    
+    .categoriesDiv{
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        position: relative;
+        height: 3.5rem;
+        flex-wrap: wrap;
+    }
+    
+    
+    .categoriesDiv:after {
+        bottom: -130px;
+    }
+
+    .filterDiv{
+        margin-top: 5rem;
+        
+    }
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+    }
+    
+    th, td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    td img {
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 50px;
+    }
+
+    
+    .quantityDiv{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    table h3{
+        font-size: 0.7rem;
+    }
+    .quantityDiv button{
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 0.6rem;
+    }
+    
+    td{
+        min-width: 5rem;
+    }
+    
+    td a{
+        margin-right: 1rem;
+    }
+    
+    td:first-child{
+        text-align: left;
+    }
+
+
+    
+    
+
+}
+@media screen and (max-width: 475px) {
+
+
+    .menuSection{
+        padding: 1rem 5rem;
+    }
+    
+    .categoriesDiv{
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        position: relative;
+        height: 3.5rem;
+        flex-wrap: wrap;
+    }
+    
+    
+    .categoriesDiv:after {
+        bottom: -200px;
+    }
+
+    .filterDiv{
+        margin-top: 9rem;
+        
+    }
+
+
+
+
+
+}

@@ -10,6 +10,10 @@ let nutsCheckbox = document.querySelector('.filterNuts');
 let spiceSlider = document.querySelector('.slider');
 let spiceTxt = document.querySelector(`.spiceTxt`);
 
+let hamburger = document.querySelector(`.hamburger`)
+let offScreenMenu = document.querySelector(`.offScreenMenu`)
+
+
 spiceTxt.innerHTML = `Spiciness: 0`
 spiceSlider.addEventListener('input', () => {
     spiceTxt.innerHTML = `Spiciness: ${spiceSlider.value}`;
@@ -166,6 +170,18 @@ function onAddToBasketBtnClick(id) {
         console.error(`element not found`); 
     }
 }
+
+
+// hamburger click function
+
+function onHamBtnClick() {
+    offScreenMenu.style.visibility = "visible";
+}
+function onHamCloseBtnClick() {
+    offScreenMenu.style.visibility = "hidden";
+}
+
+
 
 
 
